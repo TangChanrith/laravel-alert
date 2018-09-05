@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Vinkla\Alert\Facades;
+namespace Chanr1th\Alert\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

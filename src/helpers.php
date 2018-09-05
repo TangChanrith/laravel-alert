@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-use Vinkla\Alert\Alert;
+use Chianr1th\Alert\Alert;
 
 if (!function_exists('alert')) {
     /**

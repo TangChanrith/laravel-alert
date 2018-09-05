@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Vinkla\Alert;
+namespace Chianr1th\Alert;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;

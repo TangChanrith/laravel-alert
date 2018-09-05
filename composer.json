@@ -1,13 +1,13 @@
 {
-    "name": "vinkla/alert",
+    "name": "chanr1th/laravel-alert",
     "description": "A Bootstrap alert helper for Laravel",
     "license": "MIT",
     "keywords": ["laravel", "bootstrap", "alert", "flash"],
     "authors": [
         {
-            "name": "Vincent Klaiber",
-            "email": "hello@vinkla.com",
-            "homepage": "https://vinkla.com"
+            "name": "Tang Chanrith",
+            "email": "tang.chanrith@gmail.com.com",
+            "homepage": "http://chanrith.me"
         }
     ],
     "require": {
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Vinkla\\Alert\\": "src/"
+            "Chianr1th\\Alert\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -32,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Vinkla\\Tests\\Alert\\": "tests/"
+            "Chianr1th\\Tests\\Alert\\": "tests/"
         }
     },
     "config": {
@@ -44,10 +44,10 @@
         },
         "laravel": {
             "providers": [
-                "Vinkla\\Alert\\AlertServiceProvider"
+                "Chianr1th\\Alert\\AlertServiceProvider"
             ],
             "aliases": {
-                "Alert": "Vinkla\\Alert\\Facades\\Alert"
+                "Alert": "Chianr1th\\Alert\\Facades\\Alert"
             }
         }
     },
