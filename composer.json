@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Chianr1th\\Alert\\": "src/"
+            "Chanr1th\\Alert\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -32,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Chianr1th\\Tests\\Alert\\": "tests/"
+            "Chanr1th\\Tests\\Alert\\": "tests/"
         }
     },
     "config": {
@@ -44,10 +44,10 @@
         },
         "laravel": {
             "providers": [
-                "Chianr1th\\Alert\\AlertServiceProvider"
+                "Chanr1th\\Alert\\AlertServiceProvider"
             ],
             "aliases": {
-                "Alert": "Chianr1th\\Alert\\Facades\\Alert"
+                "Alert": "Chanr1th\\Alert\\Facades\\Alert"
             }
         }
     },

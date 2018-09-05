@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-use Chianr1th\Alert\Alert;
+use Chanr1th\Alert\Alert;
 
 if (!function_exists('alert')) {
     /**
