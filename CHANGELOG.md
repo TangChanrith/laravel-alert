@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 5.6.0 (released 2018--8-06)
+
+- Name version follow laravel version
+
 ## 3.1.0 (released 2018-08-23)
 
 - Added laravel 5.7 support
