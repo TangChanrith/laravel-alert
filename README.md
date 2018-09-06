@@ -39,7 +39,7 @@ Include the alert view within your view templates with blade.
 
 ```php
 @include('alert::bootstrap') // for bootstrap style
-@include('alert::unseentra') // for unseentra style (has $title, but optional)
+@include('alert::unseentra') // for unseentra style (included title, but optional)
 ```
 
 ## Usage
@@ -66,7 +66,7 @@ use Chanr1th\Alert\Facades\Alert;
 Alert::danger('Eat my shorts.', 'Error');
 // We're done here - how easy was that, it just works!
 // The second parameter is title, but it optional
-// and it word only with unseentra style
+// and it work only with some style (unseentra)
 
 Alert::error('You, sir, are an idiot.');
 // This example is simple and there are far more methods available.
