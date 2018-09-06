@@ -26,19 +26,20 @@ $alert->warning('¡Ay, caramba!');
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ```bash
-$ composer require vinkla/alert
+$ composer require chanr1th/laravel-alert
 ```
 
 If you want you can use the [facade](http://laravel.com/docs/facades). Add the reference in `config/app.php` to your aliases array.
 
 ```php
-'Alert' => Vinkla\Alert\Facades\Alert::class
+'Alert' => Chanr1th\Alert\Facades\Alert::class
 ```
 
 Include the alert view within your view templates with blade.
 
 ```php
-@include('alert::bootstrap')
+@include('alert::bootstrap') // for bootstrap style
+@include('alert::unseentra') // for unseentra style (has $title, but optional)
 ```
 
 ## Usage
@@ -60,10 +61,12 @@ Here you can see an example of just how simple this package is to use. Out of th
 
 ```php
 // You can alias this in config/app.php.
-use Vinkla\Alert\Facades\Alert;
+use Chanr1th\Alert\Facades\Alert;
 
-Alert::danger('Eat my shorts.');
+Alert::danger('Eat my shorts.', 'Error');
 // We're done here - how easy was that, it just works!
+// The second parameter is title, but it optional
+// and it word only with unseentra style
 
 Alert::error('You, sir, are an idiot.');
 // This example is simple and there are far more methods available.
@@ -72,7 +75,7 @@ Alert::error('You, sir, are an idiot.');
 If you prefer to use dependency injection over facades like me, then you can inject the manager:
 
 ```php
-use Vinkla\Alert\Alert;
+use Chanr1th\Alert\Alert;
 
 class Foo
 {
@@ -104,4 +107,4 @@ alert('Marge, can I go out and play?', 'info');
 
 ## License
 
-[MIT](LICENSE) © [Vincent Klaiber](https://vinkla.com)
+[MIT](LICENSE) © [Tang Chanrith](https://chanrith.me)

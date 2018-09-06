@@ -3,7 +3,7 @@
 /*
  * This file is part of Laravel Alert.
  *
- * (c) Vincent Klaiber <hello@vinkla.com>
+ * (c) Tang Chanrith <tang.chanrith@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,10 +19,11 @@ if (!function_exists('alert')) {
      *
      * @param string|null $message
      * @param string|null $style
+     * @param string|null $title
      *
-     * @return \Vinkla\Alert\Alert
+     * @return \Chanr1th\Alert\Alert
      */
-    function alert(string $message = null, string $style = 'info'): Alert
+    function alert(string $message = null, string $style = 'info', string $title = ''): Alert
     {
         $alert = app('alert');
 
@@ -30,6 +31,6 @@ if (!function_exists('alert')) {
             return $alert;
         }
 
-        return $alert->flash($message, $style);
+        return $alert->flash($message, $style, $title);
     }
 }

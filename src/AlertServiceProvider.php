@@ -3,7 +3,7 @@
 /*
  * This file is part of Laravel Alert.
  *
- * (c) Vincent Klaiber <hello@vinkla.com>
+ * (c) Tang Chanrith <tang.chanrith@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -19,7 +19,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * This is the alert service provider class.
  *
- * @author Vincent Klaiber <hello@vinkla.com>
+ * @author Tang Chanrith <tang.chanrith@gmail.com>
  */
 class AlertServiceProvider extends ServiceProvider
 {
