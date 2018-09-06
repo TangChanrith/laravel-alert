@@ -3,7 +3,7 @@
 /*
  * This file is part of Laravel Alert.
  *
- * (c) Vincent Klaiber <hello@vinkla.com>
+ * (c) Tang Chanrith <tang.chanrith@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,17 +11,17 @@
 
 declare(strict_types=1);
 
-namespace Vinkla\Tests\Alert\Facades;
+namespace Chanr1th\Tests\Alert\Facades;
 
 use GrahamCampbell\TestBenchCore\FacadeTrait;
-use Vinkla\Alert\Alert;
-use Vinkla\Alert\Facades\Alert as Facade;
-use Vinkla\Tests\Alert\AbstractTestCase;
+use Chanr1th\Alert\Alert;
+use Chanr1th\Alert\Facades\Alert as Facade;
+use Chanr1th\Tests\Alert\AbstractTestCase;
 
 /**
  * This is the alert facade test class.
  *
- * @author Vincent Klaiber <hello@vinkla.com>
+ * @author Tang Chanrith <tang.chanrith@gmail.com>
  */
 class AlertTest extends AbstractTestCase
 {

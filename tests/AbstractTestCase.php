@@ -3,7 +3,7 @@
 /*
  * This file is part of Laravel Alert.
  *
- * (c) Vincent Klaiber <hello@vinkla.com>
+ * (c) Tang Chanrith <tang.chanrith@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace Vinkla\Tests\Alert;
+namespace Chanr1th\Tests\Alert;
 
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
-use Vinkla\Alert\AlertServiceProvider;
+use Chanr1th\Alert\AlertServiceProvider;
 
 /**
  * This is the abstract test class.
  *
- * @author Vincent Klaiber <hello@vinkla.com>
+ * @author Tang Chanrith <tang.chanrith@gmail.com>
  */
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {
