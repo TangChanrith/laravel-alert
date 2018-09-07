@@ -30,6 +30,20 @@ class Alert
     protected $session;
 
     /**
+     * The condition to show alert
+     *
+     * @var numeric
+     */
+    protected $condition = -1;
+
+    /**
+     * Alert data
+     *
+     * @var array
+     */
+    protected $data;
+
+    /**
      * Create a new alert instance.
      *
      * @param \Illuminate\Session\Store $session
@@ -52,12 +66,47 @@ class Alert
      */
     public function flash(string $message, string $style = 'info', string $title = ''): self
     {
-        $this->session->flash('alert.message', $message);
-        $this->session->flash('alert.style', $style);
-        if($title !== '')
-            $this->session->flash('alert.title', $title);
+        $flash = $this->condition <=> 0;
+        switch ($flash) {
+            case 0:
+                $alert['title']  = $this->data['title'];
+                $alert['style']  = $this->data['style'];
+                $alert['message']= $this->data['message'];
+                break;
+            default:
+                $alert['title']  = $title;
+                $alert['style']  = $style;
+                $alert['message']= $message;
+        }
+
+        $this->session->flash('alert.message', $alert['message']);
+        $this->session->flash('alert.style', $alert['style']);
+        if($alert['title'] !== '')
+            $this->session->flash('alert.title', $alert['title']);
 
         return $this;
+    }
+
+    /**
+     * Set condition to show alert
+     *
+     * @param bool $condition
+     */
+    public function if(bool $condition) {
+        $this->condition = $condition ? 1 : 0;
+    }
+
+    /**
+     * Set alert data. Alert will consider by if
+     *
+     * @param string $message
+     * @param string $style
+     * @param string $title
+     */
+    public function else(string $message, string $style = 'info', string $title = '') {
+        $this->data['title']    = $title;
+        $this->data['style']    = $style;
+        $this->data['message']  = $message;
     }
 
     /**
