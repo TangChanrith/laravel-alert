@@ -103,6 +103,13 @@ alert()->error('I feel like such a tool.');
 
 // The alert function accepts message and style.
 alert('Marge, can I go out and play?', 'info');
+
+// Condition to display alert
+alert('User updated', 'success', 'Congratulation')
+    ->if($user->save())
+    ->else('User not updated.', 'danger', 'Error!!!');
+// The first alert will show if $user->save() return TRUE,
+// othwise the second alert will show instead
 ```
 
 ## License

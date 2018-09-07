@@ -76,12 +76,16 @@ class Alert
 
     /**
      * Flush an alert.
+     *
+     * @return \Chanr1th\Alert\Alert
      */
-    public function flush()
+    public function flush(): self
     {
         $this->session->forget('alert.message');
         $this->session->forget('alert.style');
         $this->session->forget('alert.title');
+
+        return $this;
     }
 
     /**
