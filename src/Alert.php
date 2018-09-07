@@ -32,9 +32,9 @@ class Alert
     /**
      * The condition to show alert
      *
-     * @var numeric
+     * @var bool
      */
-    protected $condition = -1;
+    protected $condition;
 
     /**
      * Alert data
@@ -66,25 +66,22 @@ class Alert
      */
     public function flash(string $message, string $style = 'info', string $title = ''): self
     {
-        $flash = $this->condition <=> 0;
-        switch ($flash) {
-            case 0:
-                $alert['title']  = $this->data['title'];
-                $alert['style']  = $this->data['style'];
-                $alert['message']= $this->data['message'];
-                break;
-            default:
-                $alert['title']  = $title;
-                $alert['style']  = $style;
-                $alert['message']= $message;
-        }
-
-        $this->session->flash('alert.message', $alert['message']);
-        $this->session->flash('alert.style', $alert['style']);
-        if($alert['title'] !== '')
-            $this->session->flash('alert.title', $alert['title']);
+        $this->session->flash('alert.message', $message);
+        $this->session->flash('alert.style', $style);
+        if($title !== '')
+            $this->session->flash('alert.title', $title);
 
         return $this;
+    }
+
+    /**
+     * Flush an alert.
+     */
+    public function flush()
+    {
+        $this->session->forget('alert.message');
+        $this->session->forget('alert.style');
+        $this->session->forget('alert.title');
     }
 
     /**
@@ -94,22 +91,26 @@ class Alert
      *
      * @return \Chanr1th\Alert\Alert
      */
-    public function if(bool $condition) {
-        $this->condition = $condition ? 1 : 0;
+    public function if(bool $condition) : self
+    {
+        $this->condition = $condition;
+        if($condition === false) {
+            $this->flush();
+        }
         return $this;
     }
 
     /**
-     * Set alert data. Alert will consider by if
+     * Set alert data if condition false
      *
      * @param string $message
      * @param string $style
      * @param string $title
      */
-    public function else(string $message, string $style = 'info', string $title = '') {
-        $this->data['title']    = $title;
-        $this->data['style']    = $style;
-        $this->data['message']  = $message;
+    public function else(string $message, string $style = 'info', string $title = '')
+    {
+        if($this->condition === false)
+            $this->flash($message, $style, $title);
     }
 
     /**
