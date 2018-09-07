@@ -91,9 +91,12 @@ class Alert
      * Set condition to show alert
      *
      * @param bool $condition
+     *
+     * @return \Chanr1th\Alert\Alert
      */
     public function if(bool $condition) {
         $this->condition = $condition ? 1 : 0;
+        return $this;
     }
 
     /**
